@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4" type="plugin" group="content" method="upgrade">
+    <name>plg_content_kickreminder</name>
+    <author>Niels Nübel</author>
+    <creationDate>20 September 2017</creationDate>
+    <copyright>Copyright (c) 2009 - 2017 Niels Nübel</copyright>
+    <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <authorEmail>info@niels-nuebel.de</authorEmail>
+    <authorUrl>www.niels-nuebel.de</authorUrl>
+    <version>0.0.1</version>
+    <description>PLG_CONTENT_KICKREMINDER_XML_DESCRIPTION</description>
+
+	<files>
+		<folder>language</folder>
+		<folder>sql</folder>
+        <file plugin="kickreminder">kickreminder.php</file>
+    </files>
+
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+            </fieldset>
+        </fields>
+    </config>
+    <updateservers>
+		<server type="extension" priority="1" name="PLG_CONTENT_KICKREMINDER">https://raw.githubusercontent.com/nielsnuebel/plg_content_kickreminder/master/update.xml</server>
+	</updateservers>
+</extension>
